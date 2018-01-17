@@ -67,20 +67,27 @@ public class CheckUpdateUtil {
         sharedPreferences = context.getSharedPreferences("NEXTWARNTIME", MODE_PRIVATE);
     }
 
-    /**
-     * 检测提醒升级的条件
-     * nearestVersion  服务端最新的软件版本号
-     */
-    public  void CheckVersionToWarnUpdate() {
-        if (compareTwoVersionSize(getAPPVersion(), nearestVersion)) {
-            if (IsTheTimeToWarnUpdate()) {
-                WarnUpgradeDialog(appVersionDescription);
+    public boolean CheckVersionToWarnUpdate() {
+        if(this.compareTwoVersionSize(this.getAPPVersion(), this.nearestVersion)) {
+            if("稍后提示".equals(this.dialogNotice)) {
+                if(!this.IsTheTimeToWarnUpdate()) {
+                    return false;
+                }
+
+                this.WarnUpgradeDialog(this.appVersionDescription);
+            } else {
+                this.WarnUpgradeDialog(this.appVersionDescription);
             }
 
-        } else {//将下次提醒的时间清零
-            SharedPreferences.Editor et = sharedPreferences.edit();
-            et.putString("nextTime", "");
-            et.commit();
+            return true;
+        } else {
+            if("稍后提示".equals(this.dialogNotice)) {
+                SharedPreferences.Editor et = this.sharedPreferences.edit();
+                et.putString("nextTime", "");
+                et.commit();
+            }
+
+            return false;
         }
     }
 
