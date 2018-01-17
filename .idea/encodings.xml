@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/checktoupdatedemo/adapter/CheckUpdateDialogAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/checktoupdatedemo/customView/UpdateProgressDialog.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_bt111.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/progressbar.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/warn_bg_shape.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/common_progress_dialog.xml" charset="GBK" />
+  </component>
+</project>
